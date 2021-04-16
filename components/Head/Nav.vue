@@ -1,56 +1,36 @@
 <template>
   <div>
-    <v-app-bar
-      app
-      :collapse="!collapseOnScroll"
-      :collapse-on-scroll="collapseOnScroll"
-      :elevate-on-scroll="collapseOnScroll"
-      :elevation="24"
-      color="#0a1b53"
-      dark
-      height="80"
-      min-width="240"
-    >
-      <Logo />
-
-      <v-spacer />
-      <v-app-bar-nav-icon
-        @click.stop="rightDrawer = !rightDrawer"
-      ></v-app-bar-nav-icon>
-    </v-app-bar>
-
-    <v-navigation-drawer v-model="rightDrawer" :right="true" temporary fixed>
-      <v-list-item class="primary">
-        <v-list-item-content>
-          <v-list-item-title>
-            <Logo class="mx-auto mt-2" />
-          </v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-
-      <v-divider></v-divider>
-
+    <v-navigation-drawer v-model="drawer" :right="right" fixed app>
       <v-list>
-        <v-list-item :nuxt="true" to="/">
-          <v-list-item-icon>
-            <v-icon light> mdi-home</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title>Home</v-list-item-title>
-        </v-list-item>
-        <v-list-item :nuxt="true" to="/news">
-          <v-list-item-icon>
-            <v-icon light> mdi-newspaper-variant-multiple</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title>News</v-list-item-title>
+        <v-list-item
+          v-for="(item, i) in items"
+          :key="i"
+          :to="item.to"
+          router
+          exact
+        >
+          <v-list-item-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title v-text="item.title" />
+          </v-list-item-content>
         </v-list-item>
         <v-list-item v-if="user" :nuxt="true" to="/admin">
           <v-list-item-icon>
-            <v-icon light> mdi-view-dashboard</v-icon>
+            <v-icon light>mdi-view-dashboard</v-icon>
           </v-list-item-icon>
           <v-list-item-title>Dashboard</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+    <v-app-bar fixed app>
+      <logo></logo>
+      <v-spacer />
+      <v-btn icon @click.stop="drawer = !drawer">
+        <v-icon>mdi-menu</v-icon>
+      </v-btn>
+    </v-app-bar>
   </div>
 </template>
 
@@ -58,8 +38,21 @@
 export default {
   data() {
     return {
-      rightDrawer: false,
-      collapseOnScroll: true,
+      drawer: false,
+      items: [
+        {
+          icon: 'mdi-apps',
+          title: 'Welcome',
+          to: '/',
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Inspire',
+          to: '/inspire',
+        },
+      ],
+      right: true,
+      title: 'Vuetify.js',
     }
   },
   computed: {

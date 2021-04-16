@@ -22,7 +22,7 @@
           <v-row>
             <v-col cols="12">
               <v-text-field
-                v-model.trim="uploadedImage.alt"
+                v-model="uploadedImage.alt"
                 label="Description"
                 inline
               />
@@ -50,7 +50,7 @@
           >
 
           <transition name="fade">
-            <UiMessage :msg="uploadMsg"></UiMessage>
+            <UIMessage :msg="uploadMsg"></UIMessage>
           </transition>
         </v-card-actions>
       </v-card>
@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import { imgCol, partnerImgCol, circuitImgCol } from '@/services/firebase'
+import { imgCol, serviceImgs } from '@/services/firebase'
 export default {
   props: {
     image: {
@@ -130,10 +130,8 @@ export default {
 
       if (this.type === 'image') {
         collection = imgCol
-      } else if (this.type === 'partner') {
-        collection = partnerImgCol
-      } else if (this.type === 'circuit') {
-        collection = circuitImgCol
+      } else if (this.type === 'services') {
+        collection = serviceImgs
       }
 
       collection

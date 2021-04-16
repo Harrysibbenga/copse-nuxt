@@ -3,7 +3,6 @@ import { postsCol } from '@/services/firebase'
 export const state = () => ({
   allPosts: [],
   post: null,
-  postsByYear: [],
 })
 
 export const mutations = {
@@ -12,13 +11,6 @@ export const mutations = {
       state.allPosts = val
     } else {
       state.allPosts = []
-    }
-  },
-  setPostsByYear(state, val) {
-    if (val) {
-      state.postsByYear = val
-    } else {
-      state.postsByYear = []
     }
   },
   setPost(state, val) {
@@ -46,26 +38,8 @@ export const actions = {
         commit('setPost', post)
       })
   },
-  setPostSlug({ commit }, slug) {
-    return new Promise((resolve, reject) => {
-      postsCol
-        .where('slug', '==', slug)
-        .get()
-        .then((docs) => {
-          docs.forEach((doc) => {
-            const post = doc.data()
-            post.id = doc.id
-            commit('setPost', post)
-            resolve(post)
-          })
-        })
-        .catch(function (error) {
-          reject(error)
-        })
-    })
-  },
   setPosts({ commit }) {
-    postsCol.orderBy('date', 'desc').onSnapshot((querySnapshot) => {
+    postsCol.orderBy('createdOn', 'desc').onSnapshot((querySnapshot) => {
       const postsArray = []
 
       querySnapshot.forEach((doc) => {
@@ -76,21 +50,6 @@ export const actions = {
       commit('setPosts', postsArray)
     })
   },
-  setPostsByYear({ commit }, year) {
-    postsCol
-      .where('year', '==', year)
-      .orderBy('date', 'desc')
-      .onSnapshot((doc) => {
-        const postsArray = []
-
-        doc.forEach((doc) => {
-          const post = doc.data()
-          post.id = doc.id
-          postsArray.push(post)
-        })
-        commit('setPostsByYear', postsArray)
-      })
-  },
 }
 
 export const getters = {
@@ -99,8 +58,5 @@ export const getters = {
   },
   getPosts(state) {
     return state.allPosts
-  },
-  getPostsByYear(state) {
-    return state.postsByYear
   },
 }

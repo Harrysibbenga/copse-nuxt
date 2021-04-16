@@ -1,6 +1,3 @@
-
-/* eslint-disable */
-
 const functions = require("firebase-functions");
 
 const { Nuxt } = require('nuxt-start');

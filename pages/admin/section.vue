@@ -1,15 +1,23 @@
 <template>
   <section id="news">
     <v-container>
-      <h2 class="font-weight-bold text-center pb-2">News</h2>
-      <div class="pt-2">
-        <PostImageUpload :image.sync="post.image" :type="type" />
-        <PostStandardForm :content.sync="post.content" />
-        <PostQuotes :quotes.sync="post.quotes" />
-        <PostGallery :gallery.sync="post.gallery" />
-        <UiMessage :msg="msg" />
+      <h2 class="font-weight-bold text-center pb-2">Section info</h2>
+      <v-row>
+        <v-col cols="6">
+          <h3>Carousel section</h3>
+          <PostImageUpload :image.sync="post.carousel.image" :type="type" />
+          <PostStandardForm :content.sync="post.carousel.content" />
+        </v-col>
+        <v-col cols="6">
+          <h3>Services section</h3>
+          <PostImageUpload :image.sync="post.section.image" :type="type" />
+          <PostItems :services.sync="post.section.services" />
+        </v-col>
+      </v-row>
+      <v-row class="pt-2">
+        <UIMessage :msg="msg" />
         <v-btn class="mt-5" color="primary" @click="submitForm">Add Post</v-btn>
-      </div>
+      </v-row>
     </v-container>
     <v-container fluid>
       <PostEditPosts
@@ -18,17 +26,16 @@
         :delete.sync="deleteModal"
         :post.sync="emitedPost"
       />
-      <ModalDeleteModal
+      <ModalsDeleteModal
         :modal.sync="deleteModal"
         :item.sync="emitedPost"
         :confirmation.sync="confirmDelete"
       />
-      <ModalEditModal
+      <ModalsEditModal
         :modal.sync="editModal"
         :edit.sync="clickedPost"
         :confirmation.sync="confirmEdit"
-        :quote="true"
-        :gallery="true"
+        :type="type"
       />
     </v-container>
   </section>
@@ -41,28 +48,37 @@ export default {
   data() {
     return {
       post: {
-        image: {
-          id: '',
-          url: '',
-          alt: '',
-        },
-        gallery: [],
-        content: {
-          type: 'post',
-          title: '',
-          track: '',
-          content: '',
-          excerpt: '',
-          date: '',
-        },
-        quotes: [
-          {
-            name: '',
-            content: '',
+        carousel: {
+          image: {
+            id: '',
+            url: '',
+            alt: '',
           },
-        ],
-        slug: '',
-        year: '',
+          content: {
+            title: '',
+            desc: '',
+            content: '',
+            href: '',
+          },
+        },
+        section: {
+          image: {
+            id: '',
+            url: '',
+            alt: '',
+          },
+          services: [
+            {
+              image: {
+                id: '',
+                url: '',
+                alt: '',
+              },
+              name: '',
+              content: '',
+            },
+          ],
+        },
       },
       type: 'image',
       msg: {
@@ -79,34 +95,20 @@ export default {
       confirmDelete: false,
       confirmEdit: false,
       emitedPost: {},
+      newPost: {},
     }
   },
   computed: {
     posts() {
       return this.$store.getters['posts/getPosts']
     },
-    clickedPost() {
-      const clickedPost = {
-        image: {
-          id: this.emitedPost.imgId,
-          url: this.emitedPost.url,
-          alt: this.emitedPost.alt,
-        },
-        gallery: this.emitedPost.gallery,
-        content: {
-          type: this.emitedPost.type,
-          title: this.emitedPost.title,
-          track: this.emitedPost.track,
-          content: this.emitedPost.content,
-          excerpt: this.emitedPost.excerpt,
-          date: this.emitedPost.date,
-        },
-        quotes: this.emitedPost.quotes,
-        slug: this.emitedPost.slug,
-        year: this.emitedPost.year,
-        id: this.emitedPost.id,
-      }
-      return clickedPost
+    clickedPost: {
+      get() {
+        return this.emitedPost
+      },
+      set(newValue) {
+        this.newPost = newValue
+      },
     },
   },
   watch: {
@@ -124,68 +126,66 @@ export default {
   methods: {
     reset() {
       this.post = {
-        image: {
-          id: '',
-          url: '',
-          alt: '',
-        },
-        gallery: [],
-        content: {
-          type: 'post',
-          title: '',
-          track: '',
-          content: '',
-          excerpt: '',
-          date: '',
-        },
-        quotes: [
-          {
-            name: '',
-            content: '',
+        carousel: {
+          image: {
+            id: '',
+            url: '',
+            alt: '',
           },
-        ],
-        slug: '',
-        year: '',
+          content: {
+            title: '',
+            desc: '',
+            content: '',
+            href: '',
+          },
+        },
+        section: {
+          image: {
+            id: '',
+            url: '',
+            alt: '',
+          },
+          services: [],
+        },
       }
       this.confirmEdit = false
       this.confirmDelete = false
     },
     addPost() {
-      let slugArry = []
-      const newSlug = []
-      let date = ''
-      // create slug
-      slugArry = this.post.content.title.split(' ')
-      date = this.post.content.date
-      this.post.year = date.split('-')[0]
+      if (this.post.section.image.url === '') {
+        this.post.section.image.url = this.defaultImg.url
+        this.post.section.image.alt = this.defaultImg.alt
+      }
 
-      slugArry.forEach((item) => {
-        newSlug.push(item.toLowerCase())
-      })
-
-      this.post.slug = newSlug.join('-') + '-' + date
-
-      if (this.post.image.url === '') {
-        this.post.image.url = this.defaultImg.url
-        this.post.image.alt = this.defaultImg.alt
+      if (this.post.carousel.image.url === '') {
+        this.post.carousel.image.url = this.defaultImg.url
+        this.post.carousel.image.alt = this.defaultImg.alt
       }
 
       postsCol
         .add({
-          title: this.post.content.title,
-          excerpt: this.post.content.excerpt,
-          slug: this.post.slug,
-          date: this.post.content.date,
-          content: this.post.content.content,
-          quotes: this.post.quotes,
-          track: this.post.content.track,
-          year: this.post.year,
+          carousel: {
+            image: {
+              url: this.post.carousel.image.url,
+              alt: this.post.carousel.image.alt,
+              id: this.post.carousel.image.id,
+            },
+            content: {
+              title: this.post.carousel.content.title,
+              desc: this.post.carousel.content.desc,
+              content: this.post.carousel.content.content,
+              href: this.post.carousel.content.href,
+            },
+          },
+          section: {
+            image: {
+              url: this.post.section.image.url,
+              alt: this.post.section.image.alt,
+              id: this.post.section.image.id,
+            },
+            services: this.post.section.services,
+          },
           createdOn: new Date(),
-          imgId: this.post.image.id,
-          url: this.post.image.url,
-          alt: this.post.image.alt,
-          type: this.post.content.type,
-          gallery: this.post.gallery,
         })
         .then(() => {
           this.reset()
@@ -214,7 +214,10 @@ export default {
         })
     },
     submitForm() {
-      if (this.post.content.date === '' || this.post.content.title === '') {
+      if (
+        this.post.carousel.content.title === '' ||
+        this.post.carousel.content.content === ''
+      ) {
         this.msg = {
           type: 'Warning',
           message:
@@ -233,7 +236,7 @@ export default {
     deleteConfirm(confirm) {
       if (confirm) {
         postsCol
-          .doc(this.clickedPost.id)
+          .doc(this.emitedPost.id)
           .delete()
           .then(() => {
             this.deleteModal = false
@@ -264,42 +267,36 @@ export default {
     },
     editConfirm(confirm) {
       if (confirm) {
-        let slugArry = []
-        const newSlug = []
-        let date = ''
-        // create slug
-        slugArry = this.clickedPost.content.title.split(' ')
-        date = this.clickedPost.content.date
-        this.clickedPost.year = date.split('-')[0]
-
-        slugArry.forEach((item) => {
-          newSlug.push(item.toLowerCase())
-        })
-
-        this.clickedPost.slug = newSlug.join('-') + '-' + date
-
-        if (this.clickedPost.image.url === '') {
-          this.clickedPost.image.url = this.defaultImg.url
-          this.clickedPost.image.alt = this.defaultImg.alt
+        if (this.emitedPost.carousel.image.url === '') {
+          this.emitedPost.carousel.image.url = this.defaultImg.url
+          this.emitedPost.carousel.image.alt = this.defaultImg.alt
         }
 
         postsCol
-          .doc(this.clickedPost.id)
+          .doc(this.emitedPost.id)
           .update({
-            title: this.clickedPost.content.title,
-            excerpt: this.clickedPost.content.excerpt,
-            slug: this.clickedPost.slug,
-            date: this.clickedPost.content.date,
-            content: this.clickedPost.content.content,
-            quotes: this.clickedPost.quotes,
-            track: this.clickedPost.content.track,
-            year: this.clickedPost.year,
+            carousel: {
+              image: {
+                url: this.emitedPost.carousel.image.url,
+                alt: this.emitedPost.carousel.image.alt,
+                id: this.emitedPost.carousel.image.id,
+              },
+              content: {
+                title: this.emitedPost.carousel.content.title,
+                desc: this.emitedPost.carousel.content.desc,
+                content: this.emitedPost.carousel.content.content,
+                href: this.emitedPost.carousel.content.href,
+              },
+            },
+            section: {
+              image: {
+                url: this.emitedPost.section.image.url,
+                alt: this.emitedPost.section.image.alt,
+                id: this.emitedPost.section.image.id,
+              },
+              services: this.emitedPost.section.services,
+            },
             lastUpdateOn: new Date(),
-            imgId: this.clickedPost.image.id,
-            url: this.clickedPost.image.url,
-            alt: this.clickedPost.image.alt,
-            type: this.clickedPost.content.type,
-            gallery: this.clickedPost.gallery,
           })
           .then(() => {
             this.reset()

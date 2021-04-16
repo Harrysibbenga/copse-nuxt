@@ -250,3 +250,9 @@ export default {
   },
 }
 </script>
+
+<style lang="css">
+.ck {
+  color: black !important;
+}
+</style>

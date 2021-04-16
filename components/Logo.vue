@@ -1,8 +1,8 @@
 <template>
   <v-img
-    src="/Stephen-Jelley-Logo.png"
-    alt="Stephen Jelley Logo"
-    max-height="60"
-    max-width="150"
+    src="/copse-automotive-logo.png"
+    alt="Copse Automotive Logo"
+    height="auto"
+    max-width="100"
   ></v-img>
 </template>

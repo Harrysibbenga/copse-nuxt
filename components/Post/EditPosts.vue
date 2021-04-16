@@ -6,7 +6,6 @@
           <thead class="black text-white">
             <tr>
               <th scope="col">Title</th>
-              <th scope="col">Date</th>
               <th scope="col">Created</th>
               <th scope="col">Updated</th>
               <th scope="col">Action</th>
@@ -14,17 +13,9 @@
           </thead>
           <tbody>
             <tr v-for="(post, index) in paginatedData" :key="index">
-              <th v-if="post.type != 'calendar'" scope="row">
-                {{ post.title }}
+              <th scope="row">
+                {{ post.carousel.content.title }}
               </th>
-              <th v-else scope="row">{{ post.track }}</th>
-              <td v-if="post.date && post.type != 'timeline'">
-                {{ post.date | formatDate }}
-              </td>
-              <td v-if="post.date && post.type == 'timeline'">
-                {{ post.date }}
-              </td>
-              <td v-if="post.type == 'partner'">-- -- --</td>
               <td>{{ post.createdOn | formatCreation }}</td>
               <td v-if="post.lastUpdateOn != null">
                 {{ post.lastUpdateOn | formatCreation }}
@@ -66,6 +57,7 @@
 <script>
 import { filter } from '@/mixins/filter'
 import { pagination } from '@/mixins/pagination'
+import _ from 'lodash'
 
 export default {
   mixins: [filter, pagination],
@@ -97,8 +89,9 @@ export default {
   },
   methods: {
     editPost(post) {
+      const copy = _.cloneDeep(post)
       this.$emit('update:edit', true)
-      this.$emit('update:post', post)
+      this.$emit('update:post', copy)
     },
     deletePost(post) {
       this.$emit('update:delete', true)

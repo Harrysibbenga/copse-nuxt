@@ -16,8 +16,8 @@
           class="img-fluid"
         />
       </v-col>
-      <ModalUploadModal :image.sync="postImage" :type="type" />
-      <ModalSelectImageModal :item.sync="postImage" :images="images" />
+      <ModalsUploadModal :image.sync="postImage" :type="type" />
+      <ModalsSelectImageModal :item.sync="postImage" :images="images" />
     </v-row>
   </div>
 </template>
@@ -62,3 +62,10 @@ export default {
   },
 }
 </script>
+
+<style>
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+</style>
