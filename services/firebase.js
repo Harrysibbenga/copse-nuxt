@@ -17,9 +17,9 @@ const firebaseConfig = {
 }
 
 // Initialize Firebase
-let app = null
 if (!firebase.apps.length) {
-  app = firebase.initializeApp(firebaseConfig)
+  firebase.initializeApp(firebaseConfig)
+  firebase.analytics()
 }
 
 const db = firebase.firestore()
@@ -29,4 +29,5 @@ export const storage = firebase.storage()
 export const imgCol = db.collection('images')
 export const serviceImgs = db.collection('service_images')
 export const postsCol = db.collection('posts')
+export const aboutCol = db.collection('about')
 export default firebase

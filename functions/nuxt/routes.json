@@ -1,0 +1,39 @@
+[
+  {
+    "path": "/admin",
+    "component": "/Users/harry/My_Documents/Websites/Copse Automotive/copse-nuxt/pages/admin.vue",
+    "chunkName": "pages/admin",
+    "children": [
+      {
+        "name": "admin",
+        "path": "",
+        "component": "/Users/harry/My_Documents/Websites/Copse Automotive/copse-nuxt/pages/admin/index.vue",
+        "chunkName": "pages/admin/index"
+      },
+      {
+        "name": "admin-about",
+        "path": "about",
+        "component": "/Users/harry/My_Documents/Websites/Copse Automotive/copse-nuxt/pages/admin/about.vue",
+        "chunkName": "pages/admin/about"
+      },
+      {
+        "name": "admin-carousel",
+        "path": "carousel",
+        "component": "/Users/harry/My_Documents/Websites/Copse Automotive/copse-nuxt/pages/admin/carousel.vue",
+        "chunkName": "pages/admin/carousel"
+      }
+    ]
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "/Users/harry/My_Documents/Websites/Copse Automotive/copse-nuxt/pages/login.vue",
+    "chunkName": "pages/login"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/harry/My_Documents/Websites/Copse Automotive/copse-nuxt/pages/index.vue",
+    "chunkName": "pages/index"
+  }
+]

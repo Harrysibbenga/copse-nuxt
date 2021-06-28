@@ -1,0 +1,86 @@
+{
+  "Logo": {
+    "description": "Auto imported from components/Logo.vue"
+  },
+  "HeadNav": {
+    "description": "Auto imported from components/Head/Nav.vue"
+  },
+  "HomeCarousel": {
+    "description": "Auto imported from components/Home/Carousel.vue"
+  },
+  "HomeContactForm": {
+    "description": "Auto imported from components/Home/ContactForm.vue"
+  },
+  "HomeContactInfo": {
+    "description": "Auto imported from components/Home/ContactInfo.vue"
+  },
+  "HomeMap": {
+    "description": "Auto imported from components/Home/Map.vue"
+  },
+  "HomeRecruitment": {
+    "description": "Auto imported from components/Home/Recruitment.vue"
+  },
+  "HomeScroll": {
+    "description": "Auto imported from components/Home/Scroll.vue"
+  },
+  "HomeSection": {
+    "description": "Auto imported from components/Home/Section.vue"
+  },
+  "HomeSocial": {
+    "description": "Auto imported from components/Home/Social.vue"
+  },
+  "HomeSubscribe": {
+    "description": "Auto imported from components/Home/Subscribe.vue"
+  },
+  "Foot": {
+    "description": "Auto imported from components/Foot/index.vue"
+  },
+  "ModalsDeleteModal": {
+    "description": "Auto imported from components/Modals/DeleteModal.vue"
+  },
+  "ModalsEditModal": {
+    "description": "Auto imported from components/Modals/EditModal.vue"
+  },
+  "ModalsExistsModal": {
+    "description": "Auto imported from components/Modals/ExistsModal.vue"
+  },
+  "ModalsMultiUpload": {
+    "description": "Auto imported from components/Modals/MultiUpload.vue"
+  },
+  "ModalsSelectImageModal": {
+    "description": "Auto imported from components/Modals/SelectImageModal.vue"
+  },
+  "ModalsSelectImagesModal": {
+    "description": "Auto imported from components/Modals/SelectImagesModal.vue"
+  },
+  "ModalsSelectModal": {
+    "description": "Auto imported from components/Modals/SelectModal.vue"
+  },
+  "ModalsUploadModal": {
+    "description": "Auto imported from components/Modals/UploadModal.vue"
+  },
+  "UICalendarCard": {
+    "description": "Auto imported from components/UI/CalendarCard.vue"
+  },
+  "UIEditor": {
+    "description": "Auto imported from components/UI/Editor.vue"
+  },
+  "UIMessage": {
+    "description": "Auto imported from components/UI/Message.vue"
+  },
+  "UINewsCard": {
+    "description": "Auto imported from components/UI/NewsCard.vue"
+  },
+  "PostEditPosts": {
+    "description": "Auto imported from components/Post/EditPosts.vue"
+  },
+  "PostImageUpload": {
+    "description": "Auto imported from components/Post/ImageUpload.vue"
+  },
+  "PostItems": {
+    "description": "Auto imported from components/Post/Items.vue"
+  },
+  "PostStandardForm": {
+    "description": "Auto imported from components/Post/StandardForm.vue"
+  }
+}

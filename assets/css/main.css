@@ -1,0 +1,76 @@
+/* thresholds: {
+    xs: 600,
+    sm: 960,
+    md: 1280,
+    lg: 1920,
+}, */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.font {
+  font-size: large;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+}
+
+@media (min-width: 960px) {
+  .position-md-absolute {
+    position: absolute !important;
+    top: 0;
+    right: 0;
+  }
+}
+
+/* bounce  */
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+
+.bounce-leave-active {
+  animation: bounce-in .5s reverse;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* fade */
+.fade-in-enter-active {
+  transition: all 0.5s ease;
+}
+
+.fade-in-leave-active {
+  transition: all 0.5s ease;
+}
+
+.fade-in-enter,
+.fade-in-leave-to {
+  position: absolute;
+  /* add for smooth transition between elements */
+  opacity: 0;
+}
