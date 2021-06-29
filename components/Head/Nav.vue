@@ -14,7 +14,8 @@
       :right="true"
       app
       color="error"
-      stateless
+      temporary
+      disable-resize-watcher
     >
       <div class="d-flex fill-height">
         <v-list class="text-center font-weight-bold ma-auto">

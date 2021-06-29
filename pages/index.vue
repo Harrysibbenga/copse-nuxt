@@ -19,7 +19,7 @@
     <v-row class="pb-16 mb-16">
       <h2
         id="social"
-        class="text-h3 text-md-h2 text-lg-h1 font-weight-bold py-16"
+        class="text-h4 text-md-h3 text-lg-h2 font-weight-bold py-16"
       >
         Instagram
       </h2>
@@ -28,7 +28,7 @@
 
     <h2
       id="recruitment"
-      class="text-h3 text-md-h2 text-lg-h1 font-weight-bold py-16"
+      class="text-h4 text-md-h3 text-lg-h2 font-weight-bold py-16"
     >
       Recruitment
     </h2>
@@ -36,7 +36,7 @@
       <home-recruitment></home-recruitment>
     </v-row>
 
-    <h2 class="text-h3 text-md-h2 text-lg-h1 font-weight-bold py-16">
+    <h2 class="text-h4 text-md-h3 text-lg-h2 font-weight-bold py-16">
       Find us
     </h2>
     <v-row style="height: 600px" class="pb-16 mb-16">

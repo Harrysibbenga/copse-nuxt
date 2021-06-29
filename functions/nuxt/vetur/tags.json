@@ -2,6 +2,9 @@
   "Logo": {
     "description": "Auto imported from components/Logo.vue"
   },
+  "Foot": {
+    "description": "Auto imported from components/Foot/index.vue"
+  },
   "HeadNav": {
     "description": "Auto imported from components/Head/Nav.vue"
   },
@@ -32,9 +35,6 @@
   "HomeSubscribe": {
     "description": "Auto imported from components/Home/Subscribe.vue"
   },
-  "Foot": {
-    "description": "Auto imported from components/Foot/index.vue"
-  },
   "ModalsDeleteModal": {
     "description": "Auto imported from components/Modals/DeleteModal.vue"
   },
@@ -59,18 +59,6 @@
   "ModalsUploadModal": {
     "description": "Auto imported from components/Modals/UploadModal.vue"
   },
-  "UICalendarCard": {
-    "description": "Auto imported from components/UI/CalendarCard.vue"
-  },
-  "UIEditor": {
-    "description": "Auto imported from components/UI/Editor.vue"
-  },
-  "UIMessage": {
-    "description": "Auto imported from components/UI/Message.vue"
-  },
-  "UINewsCard": {
-    "description": "Auto imported from components/UI/NewsCard.vue"
-  },
   "PostEditPosts": {
     "description": "Auto imported from components/Post/EditPosts.vue"
   },
@@ -82,5 +70,17 @@
   },
   "PostStandardForm": {
     "description": "Auto imported from components/Post/StandardForm.vue"
+  },
+  "UICalendarCard": {
+    "description": "Auto imported from components/UI/CalendarCard.vue"
+  },
+  "UIEditor": {
+    "description": "Auto imported from components/UI/Editor.vue"
+  },
+  "UIMessage": {
+    "description": "Auto imported from components/UI/Message.vue"
+  },
+  "UINewsCard": {
+    "description": "Auto imported from components/UI/NewsCard.vue"
   }
 }

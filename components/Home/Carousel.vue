@@ -3,6 +3,7 @@
     hide-delimiters
     :height="dim.carouselHeight"
     show-arrows-on-hover
+    cycle
     @change="changed($event)"
   >
     <v-carousel-item v-for="(item, i) in items" :key="i" class="error">
@@ -27,10 +28,10 @@
             :min-width="dim.content.minWidth"
             :min-height="dim.content.minHeight"
           >
-            <v-card tile class="transparent py-10 px-6">
+            <v-card tile class="transparent py-10 px-md-6">
               <v-card-title>
                 <h1
-                  class="text-h4 text-md-h2 text-lg-h1 mx-auto black--text font-weight-medium text-justify"
+                  class="text-h6 text-md-h2 text-lg-h1 mx-auto black--text font-weight-medium text-justify"
                   :class="{ 'white--text': mobile }"
                 >
                   {{ item.carousel.content.title }}
@@ -39,8 +40,8 @@
               <v-card-text
                 class="black--text text-md-center text-center"
                 :class="{ 'white--text': mobile }"
+                v-html="item.carousel.content.desc"
               >
-                {{ item.carousel.content.desc }}
               </v-card-text>
               <v-card-actions>
                 <v-btn

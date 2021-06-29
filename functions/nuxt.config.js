@@ -2,17 +2,49 @@
 module.exports = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - copse-nuxt',
-    title: 'copse-nuxt',
+    titleTemplate: '%s | Porsche specialists',
+    title: 'Copse Automotive',
     htmlAttrs: {
       lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { name: 'robots', content: 'index, folow' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Copse automotive offer a full range of services from routine maintenance right through to restoration and performance parts.',
+      },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:title', content: 'Copse Automotive Porsche specialists' },
+      { property: 'og:image', content: 'https://copseauto.co.uk/Copse.jpg' },
+      {
+        property: 'og:description',
+        content:
+          'Copse automotive offer a full range of services from routine maintenance right through to restoration and performance parts.',
+      },
+      { property: 'og:url', content: 'https://copseauto.co.uk' },
+      { property: 'og:site_name', content: 'Copse Automotive' },
+      {
+        property: 'twitter:title',
+        content: 'Copse Automotive Porsche specialists',
+      },
+      {
+        property: 'twitter:description',
+        content:
+          'Copse automotive offer a full range of services from routine maintenance right through to restoration and performance parts.',
+      },
+      {
+        property: 'twitter:image',
+        content: 'https://copseauto.co.uk/Copse.jpg',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'canonical', href: 'http://copseauto.co.uk' },
+    ],
     script: [
       { src: 'https://apps.elfsight.com/p/platform.js', defer: true },
       {

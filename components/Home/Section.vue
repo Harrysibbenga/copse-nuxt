@@ -4,7 +4,7 @@
       <v-row align="start" justify="start">
         <v-col class="text-left" cols="12">
           <h1
-            class="text-h2 text-lg-h1 mb-4 white--text font-weight-medium py-5"
+            class="text-h4 font-weight-bold text-md-h3 text-lg-h2 mb-4 white--text font-weight-medium py-5"
           >
             {{ item.carousel.content.title }}
           </h1>
@@ -29,7 +29,7 @@
           <img :src="service.image.url" :alt="service.image.alt" class="img" />
 
           <v-card-title
-            ><h2 class="mx-auto pb-5 text-h6">
+            ><h2 class="mx-auto pb-5 subtitle-1">
               {{ service.name }}
             </h2></v-card-title
           >
