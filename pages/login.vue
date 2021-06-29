@@ -81,8 +81,8 @@ export default {
   data() {
     return {
       formdata: {
-        email: 'harry@torquetogether.com',
-        password: 'tester',
+        email: '',
+        password: '',
       },
       hovered: false,
       passwordForm: {
