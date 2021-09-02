@@ -50,11 +50,6 @@ module.exports = {
       {
         src: '//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js',
       },
-      {
-        src: 'https://www.google.com/recaptcha/api.js',
-        async: true,
-        defer: true,
-      },
     ],
   },
 
@@ -100,6 +95,11 @@ module.exports = {
         dark: {
           error: '#A70000',
           background: '#000000',
+        },
+        light: {
+          error: '#A70000',
+          success: '#2caa2f',
+          background: '#ffffff',
         },
       },
     },

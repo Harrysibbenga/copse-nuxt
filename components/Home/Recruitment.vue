@@ -8,8 +8,8 @@
     submit a CV and covering letter to
     <a
       class="text-decoration-none error--text"
-      href="mailto:service@copse.co.uk"
-      >service@copse.co.uk.</a
+      href="mailto:service@copseauto.co.uk"
+      >service@copseauto.co.uk</a
     >
   </v-col>
 </template>

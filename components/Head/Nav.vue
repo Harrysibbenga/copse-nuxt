@@ -60,6 +60,10 @@ export default {
           to: '#classic-restoration',
         },
         {
+          title: 'Data Logging',
+          to: '/datalogging',
+        },
+        {
           title: 'Social',
           to: '#social',
         },
@@ -68,7 +72,6 @@ export default {
           to: '#contact',
         },
       ],
-      title: 'Vuetify.js',
     }
   },
   computed: {

@@ -22,14 +22,14 @@ const components = {
   ModalsSelectImagesModal: () => import('../../components/Modals/SelectImagesModal.vue' /* webpackChunkName: "components/modals-select-images-modal" */).then(c => wrapFunctional(c.default || c)),
   ModalsSelectModal: () => import('../../components/Modals/SelectModal.vue' /* webpackChunkName: "components/modals-select-modal" */).then(c => wrapFunctional(c.default || c)),
   ModalsUploadModal: () => import('../../components/Modals/UploadModal.vue' /* webpackChunkName: "components/modals-upload-modal" */).then(c => wrapFunctional(c.default || c)),
-  PostEditPosts: () => import('../../components/Post/EditPosts.vue' /* webpackChunkName: "components/post-edit-posts" */).then(c => wrapFunctional(c.default || c)),
-  PostImageUpload: () => import('../../components/Post/ImageUpload.vue' /* webpackChunkName: "components/post-image-upload" */).then(c => wrapFunctional(c.default || c)),
-  PostItems: () => import('../../components/Post/Items.vue' /* webpackChunkName: "components/post-items" */).then(c => wrapFunctional(c.default || c)),
-  PostStandardForm: () => import('../../components/Post/StandardForm.vue' /* webpackChunkName: "components/post-standard-form" */).then(c => wrapFunctional(c.default || c)),
   UICalendarCard: () => import('../../components/UI/CalendarCard.vue' /* webpackChunkName: "components/u-i-calendar-card" */).then(c => wrapFunctional(c.default || c)),
   UIEditor: () => import('../../components/UI/Editor.vue' /* webpackChunkName: "components/u-i-editor" */).then(c => wrapFunctional(c.default || c)),
   UIMessage: () => import('../../components/UI/Message.vue' /* webpackChunkName: "components/u-i-message" */).then(c => wrapFunctional(c.default || c)),
-  UINewsCard: () => import('../../components/UI/NewsCard.vue' /* webpackChunkName: "components/u-i-news-card" */).then(c => wrapFunctional(c.default || c))
+  UINewsCard: () => import('../../components/UI/NewsCard.vue' /* webpackChunkName: "components/u-i-news-card" */).then(c => wrapFunctional(c.default || c)),
+  PostEditPosts: () => import('../../components/Post/EditPosts.vue' /* webpackChunkName: "components/post-edit-posts" */).then(c => wrapFunctional(c.default || c)),
+  PostImageUpload: () => import('../../components/Post/ImageUpload.vue' /* webpackChunkName: "components/post-image-upload" */).then(c => wrapFunctional(c.default || c)),
+  PostItems: () => import('../../components/Post/Items.vue' /* webpackChunkName: "components/post-items" */).then(c => wrapFunctional(c.default || c)),
+  PostStandardForm: () => import('../../components/Post/StandardForm.vue' /* webpackChunkName: "components/post-standard-form" */).then(c => wrapFunctional(c.default || c))
 }
 
 for (const name in components) {

@@ -8,32 +8,38 @@
         "name": "admin",
         "path": "",
         "component": "/Users/harry/My_Documents/Websites/Copse Automotive/copse-nuxt/pages/admin/index.vue",
-        "chunkName": "pages/admin/index"
+        "chunkName": "pages/admin/index",
+        "_name": "_1905a97e"
       },
       {
         "name": "admin-about",
         "path": "about",
         "component": "/Users/harry/My_Documents/Websites/Copse Automotive/copse-nuxt/pages/admin/about.vue",
-        "chunkName": "pages/admin/about"
+        "chunkName": "pages/admin/about",
+        "_name": "_0d64628e"
       },
       {
         "name": "admin-carousel",
         "path": "carousel",
         "component": "/Users/harry/My_Documents/Websites/Copse Automotive/copse-nuxt/pages/admin/carousel.vue",
-        "chunkName": "pages/admin/carousel"
+        "chunkName": "pages/admin/carousel",
+        "_name": "_2fa29464"
       }
-    ]
+    ],
+    "_name": "_b8bc898a"
   },
   {
     "name": "login",
     "path": "/login",
     "component": "/Users/harry/My_Documents/Websites/Copse Automotive/copse-nuxt/pages/login.vue",
-    "chunkName": "pages/login"
+    "chunkName": "pages/login",
+    "_name": "_3bda0a55"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/harry/My_Documents/Websites/Copse Automotive/copse-nuxt/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_7232673e"
   }
 ]

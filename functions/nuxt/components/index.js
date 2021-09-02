@@ -20,14 +20,14 @@ export { default as ModalsSelectImageModal } from '../../components/Modals/Selec
 export { default as ModalsSelectImagesModal } from '../../components/Modals/SelectImagesModal.vue'
 export { default as ModalsSelectModal } from '../../components/Modals/SelectModal.vue'
 export { default as ModalsUploadModal } from '../../components/Modals/UploadModal.vue'
-export { default as PostEditPosts } from '../../components/Post/EditPosts.vue'
-export { default as PostImageUpload } from '../../components/Post/ImageUpload.vue'
-export { default as PostItems } from '../../components/Post/Items.vue'
-export { default as PostStandardForm } from '../../components/Post/StandardForm.vue'
 export { default as UICalendarCard } from '../../components/UI/CalendarCard.vue'
 export { default as UIEditor } from '../../components/UI/Editor.vue'
 export { default as UIMessage } from '../../components/UI/Message.vue'
 export { default as UINewsCard } from '../../components/UI/NewsCard.vue'
+export { default as PostEditPosts } from '../../components/Post/EditPosts.vue'
+export { default as PostImageUpload } from '../../components/Post/ImageUpload.vue'
+export { default as PostItems } from '../../components/Post/Items.vue'
+export { default as PostStandardForm } from '../../components/Post/StandardForm.vue'
 
 export const LazyLogo = import('../../components/Logo.vue' /* webpackChunkName: "components/logo" */).then(c => wrapFunctional(c.default || c))
 export const LazyFoot = import('../../components/Foot/index.vue' /* webpackChunkName: "components/foot" */).then(c => wrapFunctional(c.default || c))
@@ -49,11 +49,11 @@ export const LazyModalsSelectImageModal = import('../../components/Modals/Select
 export const LazyModalsSelectImagesModal = import('../../components/Modals/SelectImagesModal.vue' /* webpackChunkName: "components/modals-select-images-modal" */).then(c => wrapFunctional(c.default || c))
 export const LazyModalsSelectModal = import('../../components/Modals/SelectModal.vue' /* webpackChunkName: "components/modals-select-modal" */).then(c => wrapFunctional(c.default || c))
 export const LazyModalsUploadModal = import('../../components/Modals/UploadModal.vue' /* webpackChunkName: "components/modals-upload-modal" */).then(c => wrapFunctional(c.default || c))
-export const LazyPostEditPosts = import('../../components/Post/EditPosts.vue' /* webpackChunkName: "components/post-edit-posts" */).then(c => wrapFunctional(c.default || c))
-export const LazyPostImageUpload = import('../../components/Post/ImageUpload.vue' /* webpackChunkName: "components/post-image-upload" */).then(c => wrapFunctional(c.default || c))
-export const LazyPostItems = import('../../components/Post/Items.vue' /* webpackChunkName: "components/post-items" */).then(c => wrapFunctional(c.default || c))
-export const LazyPostStandardForm = import('../../components/Post/StandardForm.vue' /* webpackChunkName: "components/post-standard-form" */).then(c => wrapFunctional(c.default || c))
 export const LazyUICalendarCard = import('../../components/UI/CalendarCard.vue' /* webpackChunkName: "components/u-i-calendar-card" */).then(c => wrapFunctional(c.default || c))
 export const LazyUIEditor = import('../../components/UI/Editor.vue' /* webpackChunkName: "components/u-i-editor" */).then(c => wrapFunctional(c.default || c))
 export const LazyUIMessage = import('../../components/UI/Message.vue' /* webpackChunkName: "components/u-i-message" */).then(c => wrapFunctional(c.default || c))
 export const LazyUINewsCard = import('../../components/UI/NewsCard.vue' /* webpackChunkName: "components/u-i-news-card" */).then(c => wrapFunctional(c.default || c))
+export const LazyPostEditPosts = import('../../components/Post/EditPosts.vue' /* webpackChunkName: "components/post-edit-posts" */).then(c => wrapFunctional(c.default || c))
+export const LazyPostImageUpload = import('../../components/Post/ImageUpload.vue' /* webpackChunkName: "components/post-image-upload" */).then(c => wrapFunctional(c.default || c))
+export const LazyPostItems = import('../../components/Post/Items.vue' /* webpackChunkName: "components/post-items" */).then(c => wrapFunctional(c.default || c))
+export const LazyPostStandardForm = import('../../components/Post/StandardForm.vue' /* webpackChunkName: "components/post-standard-form" */).then(c => wrapFunctional(c.default || c))

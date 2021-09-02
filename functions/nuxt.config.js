@@ -50,11 +50,6 @@ module.exports = {
       {
         src: '//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js',
       },
-      {
-        src: 'https://www.google.com/recaptcha/api.js',
-        async: true,
-        defer: true,
-      },
     ],
   },
 

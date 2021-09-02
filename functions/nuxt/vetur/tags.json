@@ -59,18 +59,6 @@
   "ModalsUploadModal": {
     "description": "Auto imported from components/Modals/UploadModal.vue"
   },
-  "PostEditPosts": {
-    "description": "Auto imported from components/Post/EditPosts.vue"
-  },
-  "PostImageUpload": {
-    "description": "Auto imported from components/Post/ImageUpload.vue"
-  },
-  "PostItems": {
-    "description": "Auto imported from components/Post/Items.vue"
-  },
-  "PostStandardForm": {
-    "description": "Auto imported from components/Post/StandardForm.vue"
-  },
   "UICalendarCard": {
     "description": "Auto imported from components/UI/CalendarCard.vue"
   },
@@ -82,5 +70,17 @@
   },
   "UINewsCard": {
     "description": "Auto imported from components/UI/NewsCard.vue"
+  },
+  "PostEditPosts": {
+    "description": "Auto imported from components/Post/EditPosts.vue"
+  },
+  "PostImageUpload": {
+    "description": "Auto imported from components/Post/ImageUpload.vue"
+  },
+  "PostItems": {
+    "description": "Auto imported from components/Post/Items.vue"
+  },
+  "PostStandardForm": {
+    "description": "Auto imported from components/Post/StandardForm.vue"
   }
 }

@@ -1,0 +1,4 @@
+curl -L -X POST 'https://driver-vehicle-licensing.api.gov.uk/vehicle-enquiry/v1/vehicles' \
+-H 'x-api-key: lRrH9VhM8Da1Efdy7IEhwapHw2lGhVqm2EmsHDuf' \
+-H 'Content-Type: application/json' \
+-d '{"registrationNumber": "KU64CXX"}' -v
